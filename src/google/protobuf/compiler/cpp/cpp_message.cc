@@ -1471,7 +1471,7 @@ GenerateStructors(io::Printer* printer) {
     "#if __cplusplus >= 201103L || _MSC_VER >= 1600\n"
     "$classname$::$classname$($classname$&& from)\n"
     "  : $superclass$() {\n"
-    "  SharedCtor();"
+    "  SharedCtor();\n"
     "  Swap(&from);\n"
     "}\n"
     "#endif\n"
