@@ -83,10 +83,25 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\google\protobuf\io\coded_stream.cc">
+    <ClCompile Include="..\src\google\protobuf\stubs\atomicops_internals_x86_gcc.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\google\protobuf\stubs\atomicops_internals_x86_msvc.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\google\protobuf\stubs\common.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\google\protobuf\stubs\once.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\google\protobuf\stubs\stringprintf.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\google\protobuf\arena.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\google\protobuf\arenastring.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\google\protobuf\extension_set.cc">
@@ -98,25 +113,19 @@
     <ClCompile Include="..\src\google\protobuf\message_lite.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\google\protobuf\stubs\once.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\google\protobuf\stubs\atomicops_internals_x86_msvc.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\google\protobuf\repeated_field.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\google\protobuf\wire_format_lite.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\google\protobuf\io\coded_stream.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\src\google\protobuf\io\zero_copy_stream.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\google\protobuf\io\zero_copy_stream_impl_lite.cc">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\google\protobuf\stubs\stringprintf.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
