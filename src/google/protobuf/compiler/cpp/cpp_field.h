@@ -37,6 +37,9 @@
 
 #include <map>
 #include <memory>
+#ifndef _SHARED_PTR_H
+#include <google/protobuf/stubs/shared_ptr.h>
+#endif
 #include <string>
 
 #include <google/protobuf/descriptor.h>
@@ -124,6 +127,16 @@ class FieldGenerator {
   // Most field types don't need this, so the default implementation is empty.
   virtual void GenerateDestructorCode(io::Printer* /*printer*/) const {}
 
+  // Generate a manual destructor invocation for use when the message is on an
+  // arena. The code that this method generates will be executed inside a
+  // shared-for-the-whole-message-class method registered with OwnDestructor().
+  // The method should return |true| if it generated any code that requires a
+  // call; this allows the message generator to eliminate the OwnDestructor()
+  // registration if no fields require it.
+  virtual bool GenerateArenaDestructorCode(io::Printer* printer) const {
+    return false;
+  }
+
   // Generate code that allocates the fields's default instance.
   virtual void GenerateDefaultInstanceAllocator(io::Printer* /*printer*/)
       const {}
@@ -169,7 +182,7 @@ class FieldGeneratorMap {
 
  private:
   const Descriptor* descriptor_;
-  scoped_array<scoped_ptr<FieldGenerator> > field_generators_;
+  google::protobuf::scoped_array<google::protobuf::scoped_ptr<FieldGenerator> > field_generators_;
 
   static FieldGenerator* MakeGenerator(const FieldDescriptor* field,
                                        const Options& options);
