@@ -365,7 +365,7 @@ GenerateMergeFromCodedStream(io::Printer* printer) const {
       descriptor_->type() == FieldDescriptor::TYPE_STRING) {
     printer->Print(variables_,
       "::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(\n"
-      "  this->$name$().data(), this->$name$().length(),\n"
+      "  this->$name$().data(), static_cast<int>(this->$name$().length()),\n"
       "  ::google::protobuf::internal::WireFormat::PARSE,\n"
       "  \"$full_name$\");\n");
   }
@@ -377,7 +377,7 @@ GenerateSerializeWithCachedSizes(io::Printer* printer) const {
       descriptor_->type() == FieldDescriptor::TYPE_STRING) {
     printer->Print(variables_,
       "::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(\n"
-      "  this->$name$().data(), this->$name$().length(),\n"
+      "  this->$name$().data(), static_cast<int>(this->$name$().length()),\n"
       "  ::google::protobuf::internal::WireFormat::SERIALIZE,\n"
       "  \"$full_name$\");\n");
   }
@@ -392,7 +392,7 @@ GenerateSerializeWithCachedSizesToArray(io::Printer* printer) const {
       descriptor_->type() == FieldDescriptor::TYPE_STRING) {
     printer->Print(variables_,
       "::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(\n"
-      "  this->$name$().data(), this->$name$().length(),\n"
+      "  this->$name$().data(), static_cast<int>(this->$name$().length()),\n"
       "  ::google::protobuf::internal::WireFormat::SERIALIZE,\n"
       "  \"$full_name$\");\n");
   }
@@ -643,7 +643,7 @@ GenerateMergeFromCodedStream(io::Printer* printer) const {
       descriptor_->type() == FieldDescriptor::TYPE_STRING) {
     printer->Print(variables_,
       "::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(\n"
-      "  this->$name$().data(), this->$name$().length(),\n"
+      "  this->$name$().data(), static_cast<int>(this->$name$().length()),\n"
       "  ::google::protobuf::internal::WireFormat::PARSE,\n"
       "  \"$full_name$\");\n");
   }
@@ -790,7 +790,7 @@ GenerateMergeFromCodedStream(io::Printer* printer) const {
     printer->Print(variables_,
       "::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(\n"
       "  this->$name$(this->$name$_size() - 1).data(),\n"
-      "  this->$name$(this->$name$_size() - 1).length(),\n"
+      "  static_cast<int>(this->$name$(this->$name$_size() - 1).length()),\n"
       "  ::google::protobuf::internal::WireFormat::PARSE,\n"
       "  \"$full_name$\");\n");
   }
@@ -804,7 +804,7 @@ GenerateSerializeWithCachedSizes(io::Printer* printer) const {
       descriptor_->type() == FieldDescriptor::TYPE_STRING) {
     printer->Print(variables_,
       "::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(\n"
-      "  this->$name$(i).data(), this->$name$(i).length(),\n"
+      "  this->$name$(i).data(), static_cast<int>(this->$name$(i).length()),\n"
       "  ::google::protobuf::internal::WireFormat::SERIALIZE,\n"
       "  \"$full_name$\");\n");
   }
@@ -822,7 +822,7 @@ GenerateSerializeWithCachedSizesToArray(io::Printer* printer) const {
       descriptor_->type() == FieldDescriptor::TYPE_STRING) {
     printer->Print(variables_,
       "  ::google::protobuf::internal::WireFormat::VerifyUTF8StringNamedField(\n"
-      "    this->$name$(i).data(), this->$name$(i).length(),\n"
+      "    this->$name$(i).data(), static_cast<int>(this->$name$(i).length()),\n"
       "    ::google::protobuf::internal::WireFormat::SERIALIZE,\n"
       "    \"$full_name$\");\n");
   }

@@ -1867,6 +1867,7 @@ inline bool GeneratedMessageReflection::HasBit(
       switch (field->cpp_type()) {
         case FieldDescriptor::CPPTYPE_STRING:
           switch (field->options().ctype()) {
+            case 0:
             default: {
               const string* default_ptr =
                   &DefaultRaw<ArenaStringPtr>(field).Get(NULL);
