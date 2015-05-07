@@ -130,3 +130,5 @@ src/test_plugin
 src/testzip.*
 src/zcg*zip
 ar-lib
+
+protoc.vcxproj.user
