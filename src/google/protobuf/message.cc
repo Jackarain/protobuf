@@ -444,7 +444,6 @@ namespace internal {
 // Macro defined in repeated_field.h. We can only define the Message-specific
 // GenericTypeHandler specializations here because we depend on Message, which
 // is not part of proto2-lite hence is not available in repeated_field.h.
-DEFINE_SPECIALIZATIONS_FOR_BASE_PROTO_TYPES_NOINLINE(Message);
 }  // namespace internal
 
 }  // namespace protobuf

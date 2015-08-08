@@ -121,6 +121,7 @@
 #include <google/protobuf/stubs/common.h>
 #include <google/protobuf/descriptor.h>
 
+#include <google/protobuf/repeated_field.h>
 
 #define GOOGLE_PROTOBUF_HAS_ONEOF
 #define GOOGLE_PROTOBUF_HAS_ARENAS
@@ -331,6 +332,9 @@ namespace internal {
 // Forward-declare interfaces used to implement RepeatedFieldRef.
 // These are protobuf internals that users shouldn't care about.
 class RepeatedFieldAccessor;
+
+DEFINE_SPECIALIZATIONS_FOR_BASE_PROTO_TYPES_NOINLINE(Message);
+
 }  // namespace internal
 
 // Forward-declare RepeatedFieldRef templates. The second type parameter is
